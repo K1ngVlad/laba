@@ -204,7 +204,7 @@ img_1.addEventListener('mouseout', () => {
 });
 
 img_1.addEventListener('click', () => {
-  alert('dadasdas');
+  alert('Вы сделали лицо весёлым! Теперь вы будете играть за него!');
   table.style.display = 'none';
   canvas.style.display = 'block';
   startGame('./assets/happy.svg');
@@ -221,7 +221,7 @@ img_2.addEventListener('mouseout', () => {
 });
 
 img_2.addEventListener('click', () => {
-  alert('dadasdas');
+  alert('Вы сделали лицо грустным! Теперь вы будете играть за него!');
   table.style.display = 'none';
   canvas.style.display = 'block';
   startGame('./assets/sad.svg');
