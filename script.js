@@ -1,4 +1,6 @@
-const imgs = document.querySelectorAll('img');
+const img_1 = document.querySelectorAll('img')[0];
+const img_2 = document.querySelectorAll('img')[1];
+
 const table = document.querySelector('table');
 const canvas = document.querySelector('canvas');
 const scoreElem = document.querySelector('.score');
@@ -191,29 +193,63 @@ const startGame = (face) => {
   };
 };
 
-imgs.forEach((e) => {
-  let imgover, imgout, text, face;
-  if (e.id === 'first-img') {
-    imgover = './assets/happy.svg';
-    imgout = './assets/sad.svg';
-    text = 'Вы сделали лицо счастливым! Теперь вы будете играть за него!';
-    face = './assets/happy.svg';
-  } else if (e.id === 'second-img') {
-    imgover = './assets/sad.svg';
-    imgout = './assets/happy.svg';
-    text = 'Вы сделали лицо несчастным! Теперь вы будете играть за него!';
-    face = './assets/sad.svg';
-  }
-  e.addEventListener('mouseover', () => {
-    e.setAttribute('src', imgover);
-  });
-  e.addEventListener('mouseout', () => {
-    e.setAttribute('src', imgout);
-  });
-  e.addEventListener('click', () => {
-    alert(text);
-    table.style.display = 'none';
-    canvas.style.display = 'block';
-    startGame(face);
-  });
+img_1.addEventListener('mouseover', () => {
+  img_1.setAttribute('src', './assets/happy.svg');
+  img_2.setAttribute('src', './assets/sad.svg');
 });
+
+img_1.addEventListener('mouseout', () => {
+  img_1.setAttribute('src', './assets/sad.svg');
+  img_2.setAttribute('src', './assets/happy.svg');
+});
+
+img_1.addEventListener('click', () => {
+  alert('dadasdas');
+  table.style.display = 'none';
+  canvas.style.display = 'block';
+  startGame('./assets/happy.svg');
+});
+
+img_2.addEventListener('mouseover', () => {
+  img_1.setAttribute('src', './assets/happy.svg');
+  img_2.setAttribute('src', './assets/sad.svg');
+});
+
+img_2.addEventListener('mouseout', () => {
+  img_1.setAttribute('src', './assets/sad.svg');
+  img_2.setAttribute('src', './assets/happy.svg');
+});
+
+img_2.addEventListener('click', () => {
+  alert('dadasdas');
+  table.style.display = 'none';
+  canvas.style.display = 'block';
+  startGame('./assets/sad.svg');
+});
+
+// imgs.forEach((e) => {
+//   let imgover, imgout, text, face;
+//   if (e.id === 'first-img') {
+//     imgover = './assets/happy.svg';
+//     imgout = './assets/sad.svg';
+//     text = 'Вы сделали лицо счастливым! Теперь вы будете играть за него!';
+//     face = './assets/happy.svg';
+//   } else if (e.id === 'second-img') {
+//     imgover = './assets/sad.svg';
+//     imgout = './assets/happy.svg';
+//     text = 'Вы сделали лицо несчастным! Теперь вы будете играть за него!';
+//     face = './assets/sad.svg';
+//   }
+//   e.addEventListener('mouseover', () => {
+//     e.setAttribute('src', imgover);
+//   });
+//   e.addEventListener('mouseout', () => {
+//     e.setAttribute('src', imgout);
+//   });
+//   e.addEventListener('click', () => {
+//     alert(text);
+//     table.style.display = 'none';
+//     canvas.style.display = 'block';
+//     startGame(face);
+//   });
+// });
